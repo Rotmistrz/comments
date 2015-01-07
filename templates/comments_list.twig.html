@@ -1,0 +1,24 @@
+<ul class="rt_comments">
+{% for comment in comments %}
+    <li>
+    {% spaceless %}
+    {% set id = comment.id %}
+    {% set nick = comment.nick %}
+    {% set date = comment.date %}
+    {% set content = comment.content %}
+    {% set edit_path = comment.edit_path %}
+    {% set delete_path = comment.delete_path %}
+    {% set admin_status = comment.admin_status %}    
+    {% set class = comment.class %}
+    {% set email = comment.email %}
+    {% set webpage = comment.webpage %}
+    {% set admin_status = comment.admin_status %}
+    {% endspaceless %}
+    {% if comment.admin_id %}
+        {%- include 'comment.twig.html' -%}
+    {% else %}        
+        {%- include 'plain_comment.twig.html' -%}
+    {% endif %} 
+    </li>
+{% endfor %}
+</ul>

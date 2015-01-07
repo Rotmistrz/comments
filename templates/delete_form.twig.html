@@ -1,0 +1,11 @@
+<form class="rt_form rt_delete_form" action="{{ path|raw }}" method="post">
+    <fieldset>
+        <h2>{{ title }}</h2>
+        
+        <input name="id" type="hidden" value="{{ id }}" />
+        <input name="decision" type="hidden" value="1" />
+        
+        <button type="subject">Tak</button>
+        <a class="rt_cancel" href="{{ return_link }}">Nie</a>
+    </fieldset>
+</form>

@@ -1,0 +1,9 @@
+<h2>Komentarze</h2>
+
+<ul class="rt_comments_groups">
+    <li class="rt_all_link"><a href="{{ all_comments_link|raw }}">Wszystkie ({{ comments_quantity }})</a></li>
+
+    {%- for group in groups -%}
+    <li><a href="{{ group.link|raw }}">{{ group.name }} ({{ group.quantity }})</a></li>
+    {%- endfor -%}
+</ul>

@@ -1,0 +1,29 @@
+<form class="rt_form rt_comment_form" action="{{ path|raw }}" method="post">
+    <fieldset>
+        {% block data %}
+            {% if editing %}
+                <input name="id" type="hidden" value="{{ id }}" />
+            {% endif %}
+        
+            <input name="group" type="hidden" value="{{ group }}" />
+        {% endblock %}
+                
+        <div class="rt_user_informations">
+        {% block user_informations %}
+        {% endblock %}
+        </div>
+                
+        <label class="rt_content">
+        Treść:
+            <textarea name="content">
+            {{- content|raw -}}
+            </textarea>
+        </label>
+                
+        <button type="submit">OK</button>
+        
+        {% if editing %}
+        <a class="rt_return" href="{{ return_link|raw }}">&lt;&lt; Powrót</a>
+        {% endif %}
+    </fieldset>
+</form>

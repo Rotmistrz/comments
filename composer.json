@@ -1,0 +1,17 @@
+{
+    "name": "rotmistrz/comments",
+    "authors": [
+        {
+            "name": "Filip Markiewicz",
+            "email": "filip.markiewicz96@gmail.com"
+        }
+    ],
+    "require": {
+        "lichtner/fluentpdo": "dev-master",
+        "twig/twig": "~1.0"
+    },
+    "autoload": {
+        "classmap": ["comments/"],
+        "files": ["functions.php"]
+    }
+}

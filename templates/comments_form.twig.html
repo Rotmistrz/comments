@@ -1,0 +1,43 @@
+<form class="rt_form rt_comment_form rt_comment_group_form" action="{{path|raw}}" method="post">
+            
+{% for comment in comments %}
+    <fieldset>
+        <input name="data[{{comment.id}}][group]" type="hidden" value="{{comment.group}}" />
+        <input name="data[{{comment.id}}][id]" type="hidden" value="{{comment.id}}" />
+                
+        <div class="rt_user_informations">
+        {% if comment.admin_id %}
+            <p>{{- comment.nick -}}</p>
+            
+            <input name="data[{{comment.id}}][admin_id]" type="hidden" value="{{comment.admin_id}}" />
+            <input name="data[{{comment.id}}][login]" type="hidden" value="{{comment.nick}}" />
+        {% else %}
+            <label>
+                Nick:<span>*</span>
+                <input name="data[{{comment.id}}][nick]" type="text" value="{{comment.nick}}" />
+            </label>
+                        
+            <label>
+                Adres e-mail:
+                <input name="data[{{comment.id}}][email]" type="text" value="{{comment.email}}" />
+            </label>
+                        
+            <label>
+                Strona internetowa:
+                <input name="data[{{comment.id}}][www]" type="text" value="{{comment.webpage}}" />
+            </label>
+        {% endif %}              
+        </div>
+                
+        <label class="rt_content">
+            Treść:<span>*</span>
+            <textarea name="data[{{comment.id}}][content]">
+            {{- comment.content|raw -}}
+            </textarea>
+        </label>
+    </fieldset>
+{% endfor %}
+        
+    <button type="submit">OK</button>
+    <a class="rt_return" href="{{- return_link -}}">&lt;&lt; Powrót</a>
+</form>

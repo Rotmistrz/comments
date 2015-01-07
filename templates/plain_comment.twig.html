@@ -1,0 +1,14 @@
+{% extends 'comment.twig.html' %}
+    {% block data %}
+        {{- parent() -}}
+        {% if email or webpage %}
+        <ul>
+            {% if email and admin_status %}
+            <li><a href="mailto:{{ email }}">E-mail</a></li>
+            {% endif %}
+            {% if webpage %}
+            <li><a href="{{ webpage }}">Strona www</a></li>
+            {% endif %}
+        </ul>
+        {% endif %}
+    {% endblock %}

@@ -1,0 +1,24 @@
+<form class="rt_comments_table" action="{{ path }}" method="get">
+    <table>
+        <tr>
+            <th>X</th><th>Grupa</th><th>Autor</th><th>Data dodania</th><th>Treść</th>
+        </tr>
+            
+        {% for comment in comments %}
+            {% if comment.admin_id %}
+            <tr class="rt_admin_comment">
+            {% else %}            
+            <tr>
+            {% endif %}
+                <td valign="top"><input name="id[]" type="checkbox" value="{{ comment.id }}" /></td>
+                <td valign="top">{{ comment.group }}</td>
+                <td class="rt_nick" valign="top">{{ comment.nick }}</td>
+                <td class="rt_date" valign="top">{{ comment.date }}</td>
+                <td class="rt_content" valign="top">{{ comment.content|raw|nl2br }}</td>
+            </tr>  
+        {% endfor %}
+    </table>
+        
+    <button id="rtEditButton" name="action" value="edit">Edytuj zaznaczone</button>
+    <button id="rtDeleteButton" name="action" value="delete">Usuń zaznaczone</button>
+</form>

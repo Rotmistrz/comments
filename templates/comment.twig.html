@@ -1,0 +1,18 @@
+<div id="rt{{ id }}" class="rt_comment{% if class %} {{ class -}} {% endif %}">
+    {% if admin_status %}
+    <ul class="rt_admin_actions">
+        <li><a class="rt_edit_link" href="{{ edit_path|raw }}">[Edytuj]</a>
+        <li><a class="rt_delete_link" href="{{ delete_path|raw }}">[Usuń]</a>
+    </ul>
+    {% endif %}
+    <div class="rt_data">
+    {% block data %}
+        <p class="rt_nick">{{ nick }}</p>
+        <p class="rt_date">{{ date }}</p>
+    {% endblock %}
+    </div>
+
+    <p class="rt_content">
+    {{ content|raw|nl2br }}
+    </p>
+</div>

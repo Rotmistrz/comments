@@ -1,0 +1,11 @@
+{% extends 'comment_form_body.twig.html' %}
+
+{% block data %}
+    {{ parent() }}
+    <input name="admin_id" type="hidden" value="{{ admin_id }}" />
+    <input name="login" type="hidden" value="{{ nick }}" />
+{% endblock %}
+
+{% block user_informations %}
+    <p>{{- nick -}}</p>
+{% endblock %}

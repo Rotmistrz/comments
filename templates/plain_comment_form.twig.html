@@ -1,0 +1,26 @@
+{% extends 'comment_form_body.twig.html' %}
+    {% block user_informations %}
+    <label class="rt_nick">
+        Nick:<span>*</span>
+        <input name="nick" type="text" value="{{ nick }}" />
+    </label>
+
+    <label class="rt_email">
+        Adres e-mail:
+        <input name="email" type="text" value="{{ email }}" />
+    </label>
+
+    <label class="rt_www">
+        Strona internetowa:
+        <input name="www" type="text" value="{{ webpage }}" />
+    </label>
+
+    {% if not editing %}
+    <label class="rt_captcha">
+        Wykonaj działanie:<span>*</span>
+        <div>{{ operation }}</div><input name="user_result" type="text" />
+        
+        <input name="result" type="hidden" value="{{ result }}" />
+    </label>
+    {% endif %}
+    {% endblock %}
