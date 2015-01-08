@@ -10,6 +10,9 @@
         "lichtner/fluentpdo": "dev-master",
         "twig/twig": "~1.0"
     },
+    "replace": {
+        "lichtner/fluentpdo": "self.version"
+    },
     "autoload": {
         "classmap": ["comments/"],
         "files": ["functions.php"]
