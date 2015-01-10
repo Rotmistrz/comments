@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "029f2bfec1e579df576a53aa1d4ef87b",
+    "hash": "07066c241e8017a0c74f6dc2c758d793",
     "packages": [
         {
             "name": "lichtner/fluentpdo",
