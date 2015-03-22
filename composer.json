@@ -7,7 +7,7 @@
         }
     ],
     "require": {
-        "lichtner/fluentpdo": "dev-master",
+        "lichtner/fluentpdo": "~1.0",
         "twig/twig": "~1.0"
     },
     "autoload": {
