@@ -261,7 +261,7 @@ class PlainComment extends Comment
                             'webpage' =>     $this->www,
                             'content' =>     $this->content,
                             'operation' =>   $Captcha->getOperation(),
-                            'result' =>      $Captcha->getResult(),
+                            'result' =>      sha1($Captcha->getResult()),
                             'return_link' => $_SESSION['return']
                             ));
 
